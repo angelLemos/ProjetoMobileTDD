@@ -80,11 +80,11 @@ public class TelaFormularioPage {
 				.sendKeys(userName);
 	}
 
-	public void inserirEmail() {
+	public void inserirEmail(String email) {
 		driver.findElementByXPath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]")
 				.click();
-		driver.findElementByXPath("/hierarchy/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout[1]")
-				.click();
+		driver.findElementByXPath("//*[@resource-id='com.Advantage.aShopping:id/AosEditTextEmail']/child::*[1]")
+				.sendKeys(email);
 
 	}
 
@@ -143,35 +143,29 @@ public class TelaFormularioPage {
 
 	}
 
-	public void selecionarContinente() {
-		driver.findElementByXPath("//*[@resource-id='com.Advantage.aShopping:id/select_dialog_listview']").click();
-		
-	}
+	public void selecionarPais(AndroidDriver<WebElement> driver, String pais) {
+
+        wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/textViewCountries"))).click();
+        driver.findElementByAndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
+                        + pais + "\").instance(0))")
+                .click();
+    }
 
 	public void registrar() throws MalformedURLException {
-		try {
-			DriverFactory.criarDriver().hideKeyboard();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-		
-		driver.findElementByClassName("android.widget.Button").click();
-
-		WebDriverWait wait = new WebDriverWait(DriverFactory.criarDriver(), 10);
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("com.Advantage.aShopping:id/imageViewMenu")));
-
+		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/buttonRegister"))).click();
 	}
 
-	@SuppressWarnings("rawtypes")
-	public TelaFormularioPage scroll() {
-		try {
-			(new TouchAction(DriverFactory.criarDriver())).press(PointOption.point(508, 1130))
-					.moveTo(PointOption.point(525, 483)).release().perform();
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-		}
-
-		return this;
-	}
+//	@SuppressWarnings("rawtypes")
+//	public TelaFormularioPage scroll() {
+//		try {
+//			(new TouchAction(DriverFactory.criarDriver())).press(PointOption.point(508, 1130))
+//					.moveTo(PointOption.point(525, 483)).release().perform();
+//		} catch (MalformedURLException e) {
+//			e.printStackTrace();
+//		}
+//
+//		return this;
+//	}
 
 }

@@ -17,6 +17,7 @@ import br.com.rsinet.hub_tdd.PageObject.TelaLoginPage;
 import br.com.rsinet.hub_tdd.PageObject.TelaMenuPage;
 import br.com.rsinet.hub_tdd.utils.DriverFactory;
 import br.com.rsinet.hub_tdd.utils.ReportConfig;
+import br.com.rsinet.hub_tdd.utils.Scroll;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -31,6 +32,7 @@ public class TesteFormulario {
 	private ExtentReports extent;
 	private String testName;
 	private ExtentTest test;
+	private Scroll scroll;
 
 	@BeforeTest
 	public void setConfigReport() {
@@ -41,13 +43,12 @@ public class TesteFormulario {
 	@BeforeMethod
 	public void setUp() throws MalformedURLException {
 		driver = DriverFactory.criarDriver();
-		PageFactory.initElements(driver, this);
-		telaInicial = PageFactory.initElements(driver, TelaInicialPage.class);
-		telaMenu = PageFactory.initElements(driver, TelaMenuPage.class);
-		telaFormulario = PageFactory.initElements(driver, TelaFormularioPage.class);
-		telaLogin = PageFactory.initElements(driver, TelaLoginPage.class);
-		
-		
+		telaInicial = new TelaInicialPage(driver);
+		telaMenu = new TelaMenuPage(driver);
+		telaFormulario = new TelaFormularioPage(driver);
+		telaLogin = new TelaLoginPage(driver);
+		scroll = new Scroll(driver);
+	
 	}
 
 	@Test
@@ -62,35 +63,21 @@ public class TesteFormulario {
 		telaMenu.clicarLogin();
 		telaLogin.clicarNovaConta();
 		
-		telaFormulario.inserirUserName("angel");
-		telaFormulario.inserirEmail();
+		telaFormulario.inserirUserName("angel9054");
+		telaFormulario.inserirEmail("angelica@hotmail.com");
 		telaFormulario.inserirSenha("Agrte12");
 		telaFormulario.confirmarSenha("Agrte12");
 		telaFormulario.inserirNome("angelica");
 		telaFormulario.inserirSobrenome("lemos");
 		telaFormulario.inserirTelefone("0288937722");
+		scroll.scrollSelecionarPais();
+		telaFormulario.selecionarPais(driver, "Brazil");
 		telaFormulario.inserirEstado("SP");
 		telaFormulario.inserirEndereco("av.Cons Nebias");
 		telaFormulario.inserirCidade("Santos");
 		telaFormulario.inserirCep("11675289");
-		telaFormulario.scroll();
-		//telaFormulario.registrar();
-//			.inserirNome("angelica");
-//			.digitarEmail("angelica.@hotmail.com").enter()
-//			.digitarSenha("Agrte12").enter()
-//			.digitarReSenha("Agrte12").enter()
-//			.digitarNome("angelica").enter()
-//			.digitarSobreNome("lemos").enter()
-//			.digitarTelefone("999876789").enter()
-//			.digitarEstado("SP").enter()
-//			.digitarEndereco("av. Cons.Nebias").enter()
-//			.digitarCidade("santos").enter()
-//			.digitarCep("11046787").enter()
-//			.scroll()
-//			.registrar();
-//		telaInicial.clicarMenu();
-//		
-//		assertTrue(telaMenu.logado());
-
+		scroll.scrollParaRegistrar();
+		telaFormulario.registrar();
+		//telaInicial.clicarMenu();		
 	}
 }

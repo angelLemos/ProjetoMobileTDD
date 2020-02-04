@@ -20,9 +20,10 @@ public class DriverFactory {
 	public static AndroidDriver<WebElement> criarDriver() throws MalformedURLException {
 		if(driver == null) {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+		desiredCapabilities.setCapability("deviceName", "emuladorAngel");
+		desiredCapabilities.setCapability("udid", "emulator-5554");
 		desiredCapabilities.setCapability("platformName", "Android");
-		desiredCapabilities.setCapability("deviceName", "emulator-5554");
-		desiredCapabilities.setCapability("automationName", "uiautomator2");
+		desiredCapabilities.setCapability("platformVersion", "9");
 		desiredCapabilities.setCapability("appPackage", "com.Advantage.aShopping");
 		desiredCapabilities.setCapability("appActivity", "com.Advantage.aShopping.SplashActivity");
 		desiredCapabilities.setCapability("unicodeKeyboard", true);
