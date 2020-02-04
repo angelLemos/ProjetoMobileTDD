@@ -4,29 +4,34 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 public class DriverFactory {
-	private static AndroidDriver<MobileElement> driver;
+	private static AndroidDriver<WebElement> driver;
 
-	public static AndroidDriver<MobileElement> getDriver() throws MalformedURLException {
-		return (driver == null) ? criarDriver() : driver;
+	private DriverFactory() {
+		
 	}
 
-	private static AndroidDriver<MobileElement> criarDriver() throws MalformedURLException {
+	@SuppressWarnings("unused")
+	public static AndroidDriver<WebElement> criarDriver() throws MalformedURLException {
+		if(driver == null) {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability("platformName", "Android");
 		desiredCapabilities.setCapability("deviceName", "emulator-5554");
 		desiredCapabilities.setCapability("automationName", "uiautomator2");
 		desiredCapabilities.setCapability("appPackage", "com.Advantage.aShopping");
 		desiredCapabilities.setCapability("appActivity", "com.Advantage.aShopping.SplashActivity");
+		desiredCapabilities.setCapability("unicodeKeyboard", true);
+		desiredCapabilities.setCapability("resetKeyboard", true);
 
 		URL remoteUrl = new URL("http://127.0.0.1:4723/wd/hub");
-		driver = new AndroidDriver<MobileElement>(remoteUrl, desiredCapabilities);
+		driver = new AndroidDriver<WebElement>(remoteUrl, desiredCapabilities);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
 		return driver;
 	}
 

@@ -5,7 +5,11 @@
 	<groupId>ProjetoAppiumTDD</groupId>
 	<artifactId> br.com.rsinet.hub_tdd.utils</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+		<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<encoding>UTF-8</encoding>
+	</properties>
 	<dependencies>
 
 		<dependency>
