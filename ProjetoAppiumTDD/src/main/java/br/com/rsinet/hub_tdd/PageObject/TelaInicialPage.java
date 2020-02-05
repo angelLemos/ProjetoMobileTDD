@@ -1,5 +1,7 @@
 package br.com.rsinet.hub_tdd.PageObject;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -49,10 +51,12 @@ public class TelaInicialPage{
 	public void clicarLupa() {
 		driver.findElementById("com.Advantage.aShopping:id/imageViewSearch").click();
 	}
-	public void clicarMenu() {
-		wait.until(ExpectedConditions.elementToBeClickable(driver.findElementById("com.Advantage.aShopping:id/imageViewMenu")));
+	public void clicarMenu() throws InterruptedException {
+		Thread.sleep(3000);
+//		wait.pollingEvery(Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/imageViewMenu")));
 		driver.findElementById("com.Advantage.aShopping:id/imageViewMenu").click();
-		
+
 	}
 
 	public void clicarNaOpcaoTelaHome(String Categoria) {

@@ -2,9 +2,9 @@ package br.com.rsinet.hub_tdd.PageObject;
 
 import java.net.MalformedURLException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,6 +17,7 @@ public class TelaFormularioPage {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
+	@SuppressWarnings("unchecked")
 	public TelaFormularioPage(WebDriver driver) {
 		this.driver = (AndroidDriver<WebElement>) driver;
 		wait = new WebDriverWait(this.driver, 20);
@@ -154,6 +155,12 @@ public class TelaFormularioPage {
 
 	public void registrar() throws MalformedURLException {
 		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/buttonRegister"))).click();
+	}
+	
+	public boolean verificarSeRegistrarEstaDisponivel() {
+		new Actions(driver).moveToElement(driver.findElementById("com.Advantage.aShopping:id/buttonRegister")).perform();
+		return driver.findElementById("com.Advantage.aShopping:id/buttonRegister").isEnabled();
+
 	}
 
 //	@SuppressWarnings("rawtypes")

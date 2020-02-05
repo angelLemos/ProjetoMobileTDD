@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
     <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\angelica.jesus\AppData\Local\Temp\testng-eclipse-134379841\testng-customsuite.xml</span>
+                    <span>C:\Users\angelica.jesus\AppData\Local\Temp\testng-eclipse-2139615028\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.rsinet.hub_tdd.testes.TesteFormulario" hash-for-method="deveCadastrarUmUsuario">deveCadastrarUmUsuario</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="br.com.rsinet.hub_tdd.testes.TesteFormulario" hash-for-method="validarBotaoRegistrarDesabilitadoSemDadosPreenchidos">validarBotaoRegistrarDesabilitadoSemDadosPreenchidos</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -130,19 +135,26 @@
                   <span class="method-name">deveCadastrarUmUsuario</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="validarBotaoRegistrarDesabilitadoSemDadosPreenchidos">
+                  </a> <!-- validarBotaoRegistrarDesabilitadoSemDadosPreenchidos -->
+                  <span class="method-name">validarBotaoRegistrarDesabilitadoSemDadosPreenchidos</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\angelica.jesus\AppData\Local\Temp\testng-eclipse-134379841\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\angelica.jesus\AppData\Local\Temp\testng-eclipse-2139615028\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;br.com.rsinet.hub_tdd.testes.TesteFormulario&quot;/&gt;
     &lt;/classes&gt;
@@ -184,16 +196,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'deveCadastrarUmUsuario')
 data.setCell(0, 2, 'br.com.rsinet.hub_tdd.testes.TesteFormulario')
-data.setCell(0, 3, 30612);
+data.setCell(0, 3, 37109);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'validarBotaoRegistrarDesabilitadoSemDadosPreenchidos')
+data.setCell(1, 2, 'br.com.rsinet.hub_tdd.testes.TesteFormulario')
+data.setCell(1, 3, 9912);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 47 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -226,12 +242,28 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">101 ms</span>
+                <span class="method-start">132 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">deveCadastrarUmUsuario</span>
-                <span class="method-start">10228 ms</span>
+                <span class="method-start">9720 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">finaliza([TestResult name=deveCadastrarUmUsuario status=SUCCESS method=TesteFormulario.deveCadastrarUmUsuario...)</span>
+                <span class="method-start">46829 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">47379 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">validarBotaoRegistrarDesabilitadoSemDadosPreenchidos</span>
+                <span class="method-start">54210 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">finaliza([TestResult name=validarBotaoRegistrarDesabilitadoSemDadosPreenchidos status=SUCCESS method=TesteFor...)</span>
+                <span class="method-start">64123 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
