@@ -47,7 +47,7 @@ public class TesteFormulario {
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		driver = DriverFactory.criarDriver();
+		driver = DriverFactory.inicializarDriver();
 		telaInicial = new TelaInicialPage(driver);
 		telaMenu = new TelaMenuPage(driver);
 		telaFormulario = new TelaFormularioPage(driver);

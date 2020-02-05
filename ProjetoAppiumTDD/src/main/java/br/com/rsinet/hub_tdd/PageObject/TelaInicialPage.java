@@ -2,6 +2,7 @@ package br.com.rsinet.hub_tdd.PageObject;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -45,6 +46,7 @@ public class TelaInicialPage{
 	public void escreverLupa(String produto) {
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").click();
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").sendKeys(produto);
+//		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").sendKeys(Keys.RETURN);
 
 	}
 

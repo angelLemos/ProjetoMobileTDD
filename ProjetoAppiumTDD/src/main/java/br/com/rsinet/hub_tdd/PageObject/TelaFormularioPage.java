@@ -69,7 +69,7 @@ public class TelaFormularioPage {
 
 	@SuppressWarnings("rawtypes")
 	public TelaFormularioPage enter() throws MalformedURLException {
-		(new TouchAction(DriverFactory.criarDriver())).tap(PointOption.point(985, 1699)).perform();
+		(new TouchAction(DriverFactory.inicializarDriver())).tap(PointOption.point(985, 1699)).perform();
 		return this;
 	}
 

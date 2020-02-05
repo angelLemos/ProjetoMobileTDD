@@ -17,7 +17,7 @@ public class DriverFactory {
 	}
 
 	@SuppressWarnings("unused")
-	public static AndroidDriver<WebElement> criarDriver() throws MalformedURLException {
+	public static AndroidDriver<WebElement> inicializarDriver() throws MalformedURLException {
 		if(driver == null) {
 		DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 		desiredCapabilities.setCapability("deviceName", "emuladorAngel");
