@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.PageObject;
+package br.com.rsinet.hub_tdd.TelaObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,11 +7,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class TelaMenuPage {
+public class TelaMenuObject {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
-	public TelaMenuPage(WebDriver driver) {
+	public TelaMenuObject(WebDriver driver) {
 		this.driver = (AndroidDriver<WebElement>) driver;
 		wait = new WebDriverWait(this.driver, 20);
 	}

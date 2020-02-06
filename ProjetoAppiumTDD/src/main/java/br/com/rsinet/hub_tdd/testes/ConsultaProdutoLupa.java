@@ -14,22 +14,22 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.hub_tdd.PageObject.TelaInicialPage;
-import br.com.rsinet.hub_tdd.PageObject.TelaProdutosPage;
+import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
+import br.com.rsinet.hub_tdd.TelaObject.TelaProdutosObject;
 import io.appium.java_client.android.AndroidDriver;
 
 public class ConsultaProdutoLupa {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
-	private TelaInicialPage telaInicial;
-	private TelaProdutosPage telaProduto;
+	private TelaInicialObject telaInicial;
+	private TelaProdutosObject telaProduto;
 
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = inicializarDriver();
-		telaInicial = new TelaInicialPage(driver);
-		telaProduto = new TelaProdutosPage(driver);
+		telaInicial = new TelaInicialObject(driver);
+		telaProduto = new TelaProdutosObject(driver);
 		wait = new WebDriverWait(driver, 30);
 	}
 
@@ -39,7 +39,7 @@ public class ConsultaProdutoLupa {
 		telaInicial.clicarLupa();
 		telaInicial.escreverLupa("Laptops");
 		telaInicial.clicarLupa();
-		telaProduto.produtoLupa();
+		telaProduto.escolherProdutoNaTelaDeProduto("HP PAVILION 15Z TOUCH LAPTOP");
 		WebElement element = driver.findElementById("com.Advantage.aShopping:id/textViewProductName");
 		wait.until(ExpectedConditions.visibilityOf(element));
 		assertEquals(element.getText(), "HP PAVILION 15Z TOUCH LAPTOP");

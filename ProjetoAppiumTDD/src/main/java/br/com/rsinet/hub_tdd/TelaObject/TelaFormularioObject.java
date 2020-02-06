@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.PageObject;
+package br.com.rsinet.hub_tdd.TelaObject;
 
 import java.net.MalformedURLException;
 
@@ -13,12 +13,12 @@ import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class TelaFormularioPage {
+public class TelaFormularioObject {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
 	@SuppressWarnings("unchecked")
-	public TelaFormularioPage(WebDriver driver) {
+	public TelaFormularioObject(WebDriver driver) {
 		this.driver = (AndroidDriver<WebElement>) driver;
 		wait = new WebDriverWait(this.driver, 20);
 	}
@@ -68,7 +68,7 @@ public class TelaFormularioPage {
 //	private WebElement btnRegistrar;
 
 	@SuppressWarnings("rawtypes")
-	public TelaFormularioPage enter() throws MalformedURLException {
+	public TelaFormularioObject enter() throws MalformedURLException {
 		(new TouchAction(DriverFactory.inicializarDriver())).tap(PointOption.point(985, 1699)).perform();
 		return this;
 	}

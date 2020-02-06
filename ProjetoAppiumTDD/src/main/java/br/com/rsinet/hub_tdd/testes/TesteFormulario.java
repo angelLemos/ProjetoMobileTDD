@@ -16,10 +16,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import br.com.rsinet.hub_tdd.PageObject.TelaFormularioPage;
-import br.com.rsinet.hub_tdd.PageObject.TelaInicialPage;
-import br.com.rsinet.hub_tdd.PageObject.TelaLoginPage;
-import br.com.rsinet.hub_tdd.PageObject.TelaMenuPage;
+import br.com.rsinet.hub_tdd.TelaObject.TelaFormularioObject;
+import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
+import br.com.rsinet.hub_tdd.TelaObject.TelaLoginObject;
+import br.com.rsinet.hub_tdd.TelaObject.TelaMenuObject;
 import br.com.rsinet.hub_tdd.utils.DriverFactory;
 import br.com.rsinet.hub_tdd.utils.ExcelDadosConfig;
 import br.com.rsinet.hub_tdd.utils.MassaDeDados;
@@ -30,11 +30,11 @@ import io.appium.java_client.android.AndroidDriver;
 public class TesteFormulario {
 
 	private AndroidDriver<WebElement> driver;
-	private TelaInicialPage telaInicial;
+	private TelaInicialObject telaInicial;
 
-	private TelaMenuPage telaMenu;
-	private TelaFormularioPage telaFormulario;
-	private TelaLoginPage telaLogin;
+	private TelaMenuObject telaMenu;
+	private TelaFormularioObject telaFormulario;
+	private TelaLoginObject telaLogin;
 	private Scroll scroll;
 	private WebDriverWait wait;
 	private MassaDeDados excel;
@@ -48,10 +48,10 @@ public class TesteFormulario {
 	@BeforeMethod
 	public void setUp() throws Exception {
 		driver = DriverFactory.inicializarDriver();
-		telaInicial = new TelaInicialPage(driver);
-		telaMenu = new TelaMenuPage(driver);
-		telaFormulario = new TelaFormularioPage(driver);
-		telaLogin = new TelaLoginPage(driver);
+		telaInicial = new TelaInicialObject(driver);
+		telaMenu = new TelaMenuObject(driver);
+		telaFormulario = new TelaFormularioObject(driver);
+		telaLogin = new TelaLoginObject(driver);
 		scroll = new Scroll(driver);
 		// nome da planilha no excel
 		ExcelDadosConfig.setExcelFile("Planilha1");

@@ -1,4 +1,4 @@
-package br.com.rsinet.hub_tdd.PageObject;
+package br.com.rsinet.hub_tdd.TelaObject;
 
 import java.time.Duration;
 
@@ -10,11 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class TelaInicialPage{
+public class TelaInicialObject{
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
-	public TelaInicialPage(WebDriver driver) {
+	public TelaInicialObject(WebDriver driver) {
 		this.driver = (AndroidDriver<WebElement>) driver;
 		wait = new WebDriverWait(this.driver, 20);
 	}
@@ -46,7 +46,7 @@ public class TelaInicialPage{
 	public void escreverLupa(String produto) {
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").click();
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").sendKeys(produto);
-//		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").sendKeys(Keys.RETURN);
+
 
 	}
 
@@ -60,6 +60,10 @@ public class TelaInicialPage{
 		driver.findElementById("com.Advantage.aShopping:id/imageViewMenu").click();
 
 	}
+	
+	public void clicarProdutoTela() {
+		driver.findElementByXPath("//android.widget.TextView[starts-with(@text,'SPEAKERS')]").click();
+	}
 
 	public void clicarNaOpcaoTelaHome(String Categoria) {
 		switch (Categoria) {
@@ -67,10 +71,13 @@ public class TelaInicialPage{
 			driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\\\"Home Page\\\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView").click();
 			break;
 		case "HEADPHONES":
-			driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\\\"Home Page\\\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[2]/android.widget.TextView").click();
+			driver.findElementByXPath("//android.widget.TextView[starts-with(@text,'HEADPHONES')]").click();
 			break;
 		case "TABLETS":
 			driver.findElementByXPath("//android.view.ViewGroup[@content-desc=\\\"Home Page\\\"]/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView").click();
+			break;
+			case "SPEAKERS":
+				driver.findElementByXPath("//android.widget.TextView[starts-with(@text,'SPEAKERS')]").click();
 		default:
 			System.out.println("Produto nao encontrado!");
 			break;
