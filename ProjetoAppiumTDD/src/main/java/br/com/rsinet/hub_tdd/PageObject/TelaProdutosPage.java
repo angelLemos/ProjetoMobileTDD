@@ -8,14 +8,16 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class TelaProdutosPage {
 	private AndroidDriver<WebElement> driver;
+	@SuppressWarnings("unused")
 	private WebDriverWait wait;
 
+	@SuppressWarnings("unchecked")
 	public TelaProdutosPage(WebDriver driver) {
 		this.driver = (AndroidDriver<WebElement>) driver;
 		wait = new WebDriverWait(this.driver, 20);
 	}
 	
 	public void produtoLupa() {
-		driver.findElementByXPath("//*[@resource-id='com.Advantage.aShopping:id/RelativeLayoutProductControl']/child::*[0]").click();
+		driver.findElementByXPath("//android.widget.TextView[starts-with(@text,'HP PAVILION 15Z TOUCH LAPTOP')]").click();
 	}
 }

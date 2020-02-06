@@ -2,54 +2,50 @@
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="64747" started-at="2020-02-05T16:38:08Z" finished-at="2020-02-05T16:39:12Z">
+  <suite name="Default suite" duration-ms="28795" started-at="2020-02-06T12:26:59Z" finished-at="2020-02-06T12:27:28Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="64747" started-at="2020-02-05T16:38:08Z" finished-at="2020-02-05T16:39:12Z">
-      <class name="br.com.rsinet.hub_tdd.testes.TesteFormulario">
-        <test-method status="PASS" signature="setConfigReport()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="setConfigReport" is-config="true" duration-ms="125" started-at="2020-02-05T14:38:08Z" finished-at="2020-02-05T14:38:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setConfigReport -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="setUp" is-config="true" duration-ms="9588" started-at="2020-02-05T14:38:08Z" finished-at="2020-02-05T14:38:17Z">
+    <test name="Default test" duration-ms="28795" started-at="2020-02-06T12:26:59Z" finished-at="2020-02-06T12:27:28Z">
+      <class name="br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="setUp" is-config="true" duration-ms="7778" started-at="2020-02-06T10:26:59Z" finished-at="2020-02-06T10:27:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="deveCadastrarUmUsuario()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="deveCadastrarUmUsuario" duration-ms="37109" started-at="2020-02-05T14:38:17Z" finished-at="2020-02-05T14:38:55Z">
+        <test-method status="PASS" signature="pesquisaProdutoCampo()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="pesquisaProdutoCampo" duration-ms="6209" started-at="2020-02-06T10:27:07Z" finished-at="2020-02-06T10:27:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deveCadastrarUmUsuario -->
-        <test-method status="PASS" signature="finaliza(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="finaliza" is-config="true" duration-ms="550" started-at="2020-02-05T14:38:55Z" finished-at="2020-02-05T14:38:55Z">
+        </test-method> <!-- pesquisaProdutoCampo -->
+        <test-method status="PASS" signature="finaliza(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="finaliza" is-config="true" duration-ms="779" started-at="2020-02-06T10:27:13Z" finished-at="2020-02-06T10:27:14Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=deveCadastrarUmUsuario status=SUCCESS method=TesteFormulario.deveCadastrarUmUsuario()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisaProdutoCampo status=SUCCESS method=ConsultaProdutoLupa.pesquisaProdutoCampo()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finaliza -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="setUp" is-config="true" duration-ms="6831" started-at="2020-02-05T14:38:55Z" finished-at="2020-02-05T14:39:02Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="setUp" is-config="true" duration-ms="8320" started-at="2020-02-06T10:27:14Z" finished-at="2020-02-06T10:27:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validarBotaoRegistrarDesabilitadoSemDadosPreenchidos()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="validarBotaoRegistrarDesabilitadoSemDadosPreenchidos" duration-ms="9912" started-at="2020-02-05T14:39:02Z" finished-at="2020-02-05T14:39:12Z">
+        <test-method status="PASS" signature="pesquisarProdutoInexistente()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="pesquisarProdutoInexistente" duration-ms="4907" started-at="2020-02-06T10:27:22Z" finished-at="2020-02-06T10:27:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validarBotaoRegistrarDesabilitadoSemDadosPreenchidos -->
-        <test-method status="PASS" signature="finaliza(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec]" name="finaliza" is-config="true" duration-ms="621" started-at="2020-02-05T14:39:12Z" finished-at="2020-02-05T14:39:12Z">
+        </test-method> <!-- pesquisarProdutoInexistente -->
+        <test-method status="PASS" signature="finaliza(org.testng.ITestResult)[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963]" name="finaliza" is-config="true" duration-ms="781" started-at="2020-02-06T10:27:27Z" finished-at="2020-02-06T10:27:28Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validarBotaoRegistrarDesabilitadoSemDadosPreenchidos status=SUCCESS method=TesteFormulario.validarBotaoRegistrarDesabilitadoSemDadosPreenchidos()[pri:0, instance:br.com.rsinet.hub_tdd.testes.TesteFormulario@20ce78ec] output={null}]]]>
+                <![CDATA[[TestResult name=pesquisarProdutoInexistente status=SUCCESS method=ConsultaProdutoLupa.pesquisarProdutoInexistente()[pri:0, instance:br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa@7714e963] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finaliza -->
-      </class> <!-- br.com.rsinet.hub_tdd.testes.TesteFormulario -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultaProdutoLupa -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
