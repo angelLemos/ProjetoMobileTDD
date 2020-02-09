@@ -1,8 +1,8 @@
 package br.com.rsinet.hub_tdd.testes;
 
-import static br.com.rsinet.hub_tdd.utils.DriverFactory.fecharDriver;
 import static br.com.rsinet.hub_tdd.utils.DriverFactory.inicializarDriver;
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
@@ -23,7 +23,7 @@ import br.com.rsinet.hub_tdd.utils.MassaDeDados;
 import br.com.rsinet.hub_tdd.utils.Scroll;
 import io.appium.java_client.android.AndroidDriver;
 
-public class ConsultaProdutoHome {
+public class ConsultarProdutoHome {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 
@@ -62,7 +62,7 @@ public class ConsultaProdutoHome {
 	}
 
 	@Test
-	public void validarAberturaProdutoErrado() throws Exception {
+	public void validandoQuantidadeErrada() throws Exception {
 		telaInicial.clicarMenu();
 		telaMenu.clicarLogin();
 		telaLogin.clicarEmUserName(excel.getUserName());
@@ -72,14 +72,10 @@ public class ConsultaProdutoHome {
 		scroll.scroolTelaHome("SPEAKERS");
 		telaProduto.escolherProdutoNaTelaDeProduto("HP ROAR MINI WIRELESS SPEAKER");
 		telaProduto.clicarEmQuantidade();
-		telaProduto.escolherQuantidades();
-
-//		scroll.scroolTelaHome("SPEAKERS");
-//		String textoElement = driver.findElement(By.xpath("/html[1]/body[1]/div[3]/section[1]/article[1]/div[2]/div[2]/h1[1]")).getText();
-//		assertEquals( textoElement, "HP CHROMEBOOK 14 G1(ES)");
-//		test = ReportConfig.createTest("validarAberturaProdutoErrado");
-//	
-//	}
+		telaProduto.escolherQuantidades("15");
+		telaProduto.confirmarQuantidadeDeProdutos();
+		telaProduto.adicionarNoCarrinho();
+		assertTrue(driver.getPageSource().contains("10"));
 
 	}
 

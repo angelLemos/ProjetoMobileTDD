@@ -2,6 +2,7 @@ package br.com.rsinet.hub_tdd.TelaObject;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -33,9 +34,22 @@ public class TelaProdutosObject {
 		driver.findElementByXPath("//android.widget.TextView[starts-with(@text, '1')]").click();
 	}
 	
-	public void escolherQuantidades() {
-		driver.findElementById("com.Advantage.aShopping:id/textViewProductQuantity").sendKeys("15");
+	public void escolherQuantidades(String digiteAQuantidade) {
+		driver.findElementById("com.Advantage.aShopping:id/textViewProductQuantity").clear();
+		driver.findElementById("com.Advantage.aShopping:id/textViewProductQuantity").sendKeys(digiteAQuantidade);
 	}
+	
+	public void confirmarQuantidadeDeProdutos() {
+		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/textViewApply")));
+		driver.findElementById("com.Advantage.aShopping:id/textViewApply").click();
+	}
+	
+	public void adicionarNoCarrinho() {
+		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/buttonProductAddToCart")));
+		driver.findElementById("com.Advantage.aShopping:id/buttonProductAddToCart").click();
+	}
+	
+	
 	
 //	public void clicarFiltro() {
 //		 driver.findElementByXPath("//android.widget.TextView[starts-with(@text, 'FILTERS')]").click();

@@ -18,7 +18,7 @@ import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaProdutosObject;
 import io.appium.java_client.android.AndroidDriver;
 
-public class ConsultaProdutoLupa {
+public class ConsultarProdutoLupa {
 	private AndroidDriver<WebElement> driver;
 	private WebDriverWait wait;
 

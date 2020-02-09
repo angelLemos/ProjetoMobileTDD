@@ -7,7 +7,7 @@
         <methods>
           <include name="finaliza"/>
           <include name="setUp"/>
-          <include name="validarAberturaProdutoErrado"/>
+          <include name="validandoQuantidadeErrada"/>
         </methods>
       </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultaProdutoHome -->
     </classes>
