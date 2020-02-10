@@ -58,7 +58,6 @@ public class ConsultarProdutoLupa {
 		// Utilizado thread para aguardar a imagem aparecer para screenshot
 		Thread.sleep(2000);
 		
-		
 		assertEquals(element.getText(), "HP PAVILION 15Z TOUCH LAPTOP");
 		test = ReportConfig.createTest("pesquisaProdutoCampo");
 	}
