@@ -12,16 +12,20 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaLoginObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaMenuObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaProdutosObject;
-import br.com.rsinet.hub_tdd.utils.DriverFactory;
 import br.com.rsinet.hub_tdd.utils.ExcelDadosConfig;
 import br.com.rsinet.hub_tdd.utils.MassaDeDados;
+import br.com.rsinet.hub_tdd.utils.ReportConfig;
 import br.com.rsinet.hub_tdd.utils.Scroll;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -35,6 +39,13 @@ public class ConsultarProdutoHome {
 	private TelaMenuObject telaMenu;
 	private TelaLoginObject telaLogin;
 	private MassaDeDados excel;
+	private ExtentTest test;
+	
+	@BeforeTest
+	public void setConfigReport() {
+		// setando o reporte
+		ReportConfig.setReport();
+	}
 
 	@BeforeMethod
 	public void setUp() throws Exception {
@@ -60,6 +71,7 @@ public class ConsultarProdutoHome {
 		WebElement element = driver.findElementById("com.Advantage.aShopping:id/textViewProductName");
 		wait.until(ExpectedConditions.visibilityOf(element));
 		assertEquals(element.getText(), "LOGITECH USB HEADSET H390");
+		test = ReportConfig.createTest("pesquisaProdutoTela");
 
 	}
 
@@ -78,11 +90,20 @@ public class ConsultarProdutoHome {
 		telaProduto.confirmarQuantidadeDeProdutos();
 		telaProduto.adicionarNoCarrinho();
 		assertTrue(driver.getPageSource().contains("10"));
+		test = ReportConfig.createTest("validandoQuantidadeErrada");
 
 	}
 
 	@AfterMethod
 	public void finaliza(ITestResult result) throws IOException {
-		 fecharDriver();
+		ReportConfig.statusReported(test, result, driver);
+
+		// fechando
+		fecharDriver();
+	}
+
+	@AfterTest
+	public void finalizaReport() {
+		ReportConfig.quitExtent();
 	}
 }

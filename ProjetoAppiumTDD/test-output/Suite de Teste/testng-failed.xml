@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite de Teste]">
+  <test name="Automacao utilizando TDD(failed)">
+    <classes>
+      <class name="br.com.rsinet.hub_tdd.testes.TesteFormulario">
+        <methods>
+          <include name="finaliza"/>
+          <include name="setUp"/>
+          <include name="setConfigReport"/>
+          <include name="finalizaReport"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testes.TesteFormulario -->
+      <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome">
+        <methods>
+          <include name="setUp"/>
+          <include name="finaliza"/>
+          <include name="setConfigReport"/>
+          <include name="finalizaReport"/>
+          <include name="validandoQuantidadeErrada"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome -->
+      <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa">
+        <methods>
+          <include name="finalizaReport"/>
+          <include name="finaliza"/>
+          <include name="setUp"/>
+          <include name="setConfigReport"/>
+        </methods>
+      </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa -->
+    </classes>
+  </test> <!-- Automacao utilizando TDD(failed) -->
+</suite> <!-- Failed suite [Suite de Teste] -->

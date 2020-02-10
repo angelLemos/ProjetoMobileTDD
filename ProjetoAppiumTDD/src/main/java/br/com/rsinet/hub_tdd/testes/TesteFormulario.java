@@ -12,9 +12,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentTest;
 
 import br.com.rsinet.hub_tdd.TelaObject.TelaFormularioObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
@@ -38,6 +41,7 @@ public class TesteFormulario {
 	private Scroll scroll;
 	private WebDriverWait wait;
 	private MassaDeDados excel;
+	private ExtentTest test;
 
 	@BeforeTest
 	public void setConfigReport() {
@@ -86,8 +90,9 @@ public class TesteFormulario {
 		WebElement element = driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuUser"));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		assertEquals(element.getText(), excel.getUserName());
+		test = ReportConfig.createTest("SucessoCadastrarCliente");
 	}
-	
+
 	@Test
 	public void validarBotaoRegistrarDesabilitadoSemDadosPreenchidos() throws Exception {
 		telaInicial.clicarMenu();
@@ -96,10 +101,19 @@ public class TesteFormulario {
 		telaFormulario.inserirEmail(excel.getEmail());
 		scroll.scrollBotaoRegistrar();
 		assertFalse(telaFormulario.verificarSeRegistrarEstaDisponivel());
+		test = ReportConfig.createTest("validarBotaoRegistrarDesabilitado");
 	}
-	
+
 	@AfterMethod
 	public void finaliza(ITestResult result) throws IOException {
+		ReportConfig.statusReported(test, result, driver);
+
+		// fechando
 		fecharDriver();
+	}
+
+	@AfterTest
+	public void finalizaReport() {
+		ReportConfig.quitExtent();
 	}
 }
