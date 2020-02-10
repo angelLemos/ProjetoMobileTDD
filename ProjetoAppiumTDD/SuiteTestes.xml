@@ -3,9 +3,9 @@
 <suite name="Suite de Teste">
 	<test name="Automacao utilizando TDD">
 		<classes>
+			<class name="br.com.rsinet.hub_tdd.testes.TesteFormulario" />
 			<class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome" />
 			<class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa" />
-			<class name="br.com.rsinet.hub_tdd.testes.TesteFormulario" />
 		</classes>
 	</test>
 </suite>

@@ -1,5 +1,6 @@
 package br.com.rsinet.hub_tdd.testes;
 
+import static br.com.rsinet.hub_tdd.utils.DriverFactory.fecharDriver;
 import static br.com.rsinet.hub_tdd.utils.DriverFactory.inicializarDriver;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
@@ -18,6 +19,7 @@ import br.com.rsinet.hub_tdd.TelaObject.TelaInicialObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaLoginObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaMenuObject;
 import br.com.rsinet.hub_tdd.TelaObject.TelaProdutosObject;
+import br.com.rsinet.hub_tdd.utils.DriverFactory;
 import br.com.rsinet.hub_tdd.utils.ExcelDadosConfig;
 import br.com.rsinet.hub_tdd.utils.MassaDeDados;
 import br.com.rsinet.hub_tdd.utils.Scroll;
@@ -81,6 +83,6 @@ public class ConsultarProdutoHome {
 
 	@AfterMethod
 	public void finaliza(ITestResult result) throws IOException {
-		// fecharDriver();
+		 fecharDriver();
 	}
 }
