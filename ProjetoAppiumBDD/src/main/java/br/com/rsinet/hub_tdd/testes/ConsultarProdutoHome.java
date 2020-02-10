@@ -66,7 +66,7 @@ public class ConsultarProdutoHome {
 	@Test
 	public void pesquisaProdutoTela() {
 
-		telaInicial.clicarProdutoTela("HEADPHONES");
+		telaInicial.clicarNaOpcaoTelaHome("HEADPHONES");
 		telaProduto.escolherProdutoNaTelaDeProduto("LOGITECH USB HEADSET H390");
 		WebElement element = driver.findElementById("com.Advantage.aShopping:id/textViewProductName");
 		wait.until(ExpectedConditions.visibilityOf(element));
