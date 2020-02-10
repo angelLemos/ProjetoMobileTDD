@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa">
+      <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome">
         <methods>
-          <include name="finaliza"/>
-          <include name="pesquisaProdutoCampo"/>
           <include name="setUp"/>
+          <include name="finaliza"/>
           <include name="setConfigReport"/>
+          <include name="validandoQuantidadeErrada"/>
         </methods>
-      </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa -->
+      </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -86,6 +86,7 @@ public class ConsultarProdutoHome {
 		scroll.scroolTelaHome("SPEAKERS");
 		telaProduto.escolherProdutoNaTelaDeProduto("HP ROAR MINI WIRELESS SPEAKER");
 		telaProduto.clicarEmQuantidade();
+		Thread.sleep(2000);
 		telaProduto.escolherQuantidades("15");
 		telaProduto.confirmarQuantidadeDeProdutos();
 		telaProduto.adicionarNoCarrinho();
