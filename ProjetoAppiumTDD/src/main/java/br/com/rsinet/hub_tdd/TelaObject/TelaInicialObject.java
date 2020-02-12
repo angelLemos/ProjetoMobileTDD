@@ -1,5 +1,8 @@
 package br.com.rsinet.hub_tdd.TelaObject;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -20,6 +23,7 @@ public class TelaInicialObject {
 	public void escreverLupa(String produto) {
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").click();
 		driver.findElementById("com.Advantage.aShopping:id/editTextSearch").sendKeys(produto);
+		driver.findElementById("com.Advantage.aShopping:id/imageViewSearch").click();
 
 	}
 
@@ -28,9 +32,7 @@ public class TelaInicialObject {
 	}
 
 	public void clicarMenu() throws InterruptedException {
-		Thread.sleep(3000);
-//		wait.pollingEvery(Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/imageViewMenu")));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("com.Advantage.aShopping:id/imageViewMenu"))));
 		driver.findElementById("com.Advantage.aShopping:id/imageViewMenu").click();
 
 	}

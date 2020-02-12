@@ -7,24 +7,22 @@
         <methods>
           <include name="finaliza"/>
           <include name="setUp"/>
-          <include name="validarBotaoRegistrarDesabilitadoSemDadosPreenchidos"/>
-          <include name="deveCadastrarUmUsuario"/>
           <include name="setConfigReport"/>
+          <include name="finalizaReport"/>
         </methods>
       </class> <!-- br.com.rsinet.hub_tdd.testes.TesteFormulario -->
       <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome">
         <methods>
           <include name="setUp"/>
-          <include name="pesquisaProdutoTela"/>
           <include name="finaliza"/>
           <include name="setConfigReport"/>
-          <include name="validandoQuantidadeErrada"/>
+          <include name="finalizaReport"/>
         </methods>
       </class> <!-- br.com.rsinet.hub_tdd.testes.ConsultarProdutoHome -->
       <class name="br.com.rsinet.hub_tdd.testes.ConsultarProdutoLupa">
         <methods>
+          <include name="finalizaReport"/>
           <include name="finaliza"/>
-          <include name="pesquisaProdutoCampo"/>
           <include name="pesquisarProdutoInexistente"/>
           <include name="setUp"/>
           <include name="setConfigReport"/>

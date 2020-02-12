@@ -86,6 +86,7 @@ public class TesteFormulario {
 		telaFormulario.inserirCep(excel.getCEP());
 		scroll.scrollBotaoRegistrar();
 		telaFormulario.registrar();
+		scroll.scrollBotaoRegistrar();
 		telaInicial.clicarMenu();
 		WebElement element = driver.findElement(By.id("com.Advantage.aShopping:id/textViewMenuUser"));
 		wait.until(ExpectedConditions.visibilityOf(element));

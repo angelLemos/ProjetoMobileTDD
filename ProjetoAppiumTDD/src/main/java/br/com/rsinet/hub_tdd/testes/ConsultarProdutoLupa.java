@@ -1,11 +1,13 @@
 package br.com.rsinet.hub_tdd.testes;
 
 import static br.com.rsinet.hub_tdd.utils.DriverFactory.fecharDriver;
+
 import static br.com.rsinet.hub_tdd.utils.DriverFactory.inicializarDriver;
 import static org.testng.Assert.assertEquals;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,7 +52,6 @@ public class ConsultarProdutoLupa {
 
 		telaInicial.clicarLupa();
 		telaInicial.escreverLupa("Laptops");
-		telaInicial.clicarLupa();
 		telaProduto.escolherProdutoNaTelaDeProduto("HP PAVILION 15Z TOUCH LAPTOP");
 		WebElement element = driver.findElementById("com.Advantage.aShopping:id/textViewProductName");
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -63,11 +64,10 @@ public class ConsultarProdutoLupa {
 	}
 
 	@Test
-	public void pesquisarProdutoInexistente() throws InterruptedException {
+	public void pesquisarProdutoInexistente() {
 		telaInicial.clicarLupa();
 		telaInicial.escreverLupa("smartphones");
-		telaInicial.clicarLupa();
-		WebElement element = driver.findElementById("com.Advantage.aShopping:id/textViewNoProductsToShow");
+		WebElement element = driver.findElement(By.id("com.Advantage.aShopping:id/textViewNoProductsToShow"));
 		wait.until(ExpectedConditions.visibilityOf(element));
 		assertEquals(element.getText(), "- No results for \"smartphones\" -");
 		test = ReportConfig.createTest("pesquisarProdutoInexistente");
