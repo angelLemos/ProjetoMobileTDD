@@ -27,6 +27,7 @@ public class TelaProdutosObject {
 //	}
 	
 	public void escolherProdutoNaTelaDeProduto(String nomeProduto) {
+		
 	    driver.findElementByXPath("//android.widget.TextView[starts-with(@text, '"+nomeProduto+"')]").click();
 	}
 	
@@ -48,14 +49,4 @@ public class TelaProdutosObject {
 		wait.until(ExpectedConditions.visibilityOf(driver.findElementById("com.Advantage.aShopping:id/buttonProductAddToCart")));
 		driver.findElementById("com.Advantage.aShopping:id/buttonProductAddToCart").click();
 	}
-	
-	
-	
-//	public void clicarFiltro() {
-//		 driver.findElementByXPath("//android.widget.TextView[starts-with(@text, 'FILTERS')]").click();
-//	}
-//	
-//	public void telaFiltro() {
-//		 driver.findElementByXPath("//android.widget.TextView[starts-with(@text, 'BY PRICE')]").click();
-//	}
 }
